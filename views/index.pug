@@ -1,0 +1,113 @@
+doctype html
+- var members = [{name:'Maroš Ondrejka', data:'maros-ondrejka' }, {name:'Albert Russ', data:'albert-russ' }, {name:'Tomáš Kösegi', data:'tomas-kosegi' }];
+- var els = ['member', 'memberCSS', 'member-4', 'member-2', 'member-3', 'member-5'];
+
+mixin member(name, data)
+  li.js-member-anim.c-member(data-member=data)
+    figure.c-member__figure
+      img.c-member__image(src='images/' + data +'.jpg' alt=name)
+    figcaption.c-member__figcaption
+      h3.c-member__name=name
+
+mixin memberCSS(name, data)
+  li.js-member-anim.c-memberCSS(data-member=data)
+    figure.c-member__figure-css
+      .c-member__image-css
+    figcaption.c-member__figcaption
+      h3.c-member__nameCSS=name
+
+mixin member-2(name, data)
+  li.js-member-anim.c-memberCSS(data-member=data)
+    figure.c-member__figure-2
+      img.c-member__image-2(src='images/' + data +'.jpg' alt=name)
+    figcaption.c-member__figcaption
+      h3.c-member__nameCSS=name
+
+mixin member-3(name, data)
+  li.js-member-anim.c-memberCSS(data-member=data)
+    figure.c-member__figure-3
+      img.c-member__image-3(src='images/' + data +'.jpg' alt=name)
+    figcaption.c-member__figcaption
+      h3.c-member__nameCSS=name
+
+mixin member-4(name, data)
+  li.js-member.c-memberCSS(data-member=data)
+    figure.c-member__figure-css
+      img.c-member__image-4(src='images/' + data +'.jpg' alt=name)
+    figcaption.c-member__figcaption
+      h3.c-member__nameCSS=name
+
+mixin member-5(name, data)
+  li.js-member-anim.c-member(data-member=data)
+    figure.c-member__figure-5
+      img.c-member__image-3(src='images/' + data +'.jpg' alt=name)
+    figcaption.c-member__figcaption-bottom
+      h3.c-member__name=name
+
+html(lang="sk")
+  head
+    meta(charset="UTF-8")
+    meta(name="description", content="responsive navigation")
+    meta(name="author", content="Tomas Kosegi")
+    meta(name="viewport", content="width=device-width, initial-scale=1")
+    title index
+    link(rel="stylesheet", href="main.css")
+  body#js-page.c-page
+    main
+
+      each el, index in els
+        section.l-section
+          h2.c-section__title Členovia ##{index + 1}
+          hr
+          ul.c-members
+            each member in members
+              +#{el}(member.name, member.data)
+
+      //- section.l-section
+        h2.c-section__title Členovia #1
+        hr
+        ul.c-members
+          each member in members
+            +member(member.name, member.data)
+
+      //- section.l-section
+        h2.c-section__title Členovia #2
+        hr
+        ul.c-members
+          each member in members
+            +memberCSS(member.name, member.data)
+
+      //- section.l-section
+        h2.c-section__title Členovia #3
+        hr
+        ul.c-members
+          each member in members
+            +member-4(member.name, member.data)
+
+      //- section.l-section
+        h2.c-section__title Členovia #4
+        hr
+        ul.c-members
+          each member in members
+            +member-2(member.name, member.data)
+
+      //- section.l-section
+        h2.c-section__title Členovia #5
+        hr
+        ul.c-members
+          each member in members
+            +member-3(member.name, member.data)
+
+
+      //- section.l-section
+        h2.c-section__title Členovia #6
+        hr
+        ul.c-members
+          each member in members
+            +member-5(member.name, member.data)
+
+    #js-modal.c-modal
+    script(src="js/TweenMax.min.js")
+    script(src="js/util.js")
+    script(src="js/app.js")
+    script(src="js/onload.js")
