@@ -171,6 +171,11 @@ hr {
   -webkit-border-radius: 75px;
           border-radius: 75px; }
 
+.c-member__image,
+.c-member__image-css {
+  -webkit-transform: scale3d(1, 1, 1);
+          transform: scale3d(1, 1, 1); }
+
 .c-member__figure-css,
 .c-member__figure-2,
 .c-member__figure-3,
@@ -243,6 +248,32 @@ hr {
   height: 100%;
   background-position: center;
   background-size: cover; }
+
+.c-member__figure-7 {
+  -webkit-border-radius: 75px;
+          border-radius: 75px;
+  width: 150px;
+  height: 150px;
+  overflow: hidden;
+  position: relative;
+  z-index: 999;
+  margin-bottom: 2.175rem; }
+
+.c-member__image-7 {
+  position: absolute;
+  top: 50%;
+  left: 0;
+  min-height: 100%;
+  width: 100%;
+  -webkit-transition: opacity 0.5s 0.1s, -webkit-transform 0.5s 0.1s;
+  transition: opacity 0.5s 0.1s, -webkit-transform 0.5s 0.1s;
+  transition: transform 0.5s 0.1s, opacity 0.5s 0.1s;
+  transition: transform 0.5s 0.1s, opacity 0.5s 0.1s, -webkit-transform 0.5s 0.1s;
+  -webkit-transform: translate3d(0, -50%, 0);
+          transform: translate3d(0, -50%, 0); }
+  .c-member__image-7:hover {
+    -webkit-transform: translate3d(0, -50%, 0) scale3d(1.2, 1.2, 1);
+            transform: translate3d(0, -50%, 0) scale3d(1.2, 1.2, 1); }
 
 .c-memberCSS[data-member=maros-ondrejka] .c-member__image-css {
   background-image: url("images/maros-ondrejka.jpg"); }
@@ -388,7 +419,8 @@ hr {
   visibility: hidden; }
 
 .member-is-clicked .c-member__image-3,
-.member-is-clicked .c-member__image-2 {
+.member-is-clicked .c-member__image-2,
+.member-is-clicked .c-member__image-4 {
   -webkit-transform: translate3d(0, -50%, 0);
           transform: translate3d(0, -50%, 0); }
 
@@ -399,3 +431,7 @@ hr {
 .member-is-clicked .c-member__image-css {
   -webkit-transform: scale3d(1.25, 1.25, 1);
           transform: scale3d(1.25, 1.25, 1); }
+
+.member-is-clicked .c-member__image-7 {
+  -webkit-transform: translate3d(0, -50%, 0) scale3d(1.2, 1.2, 1);
+          transform: translate3d(0, -50%, 0) scale3d(1.2, 1.2, 1); }

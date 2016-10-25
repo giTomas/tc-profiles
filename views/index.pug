@@ -1,6 +1,6 @@
 doctype html
 - var members = [{name:'Maroš Ondrejka', data:'maros-ondrejka' }, {name:'Albert Russ', data:'albert-russ' }, {name:'Tomáš Kösegi', data:'tomas-kosegi' }];
-- var els = ['member', 'memberCSS', 'member-4', 'member-2', 'member-3', 'member-5'];
+- var els = ['member', 'memberCSS', 'member-4', 'member-2', 'member-3', 'member-5', 'member-7'];
 
 mixin member(name, data)
   li.js-member-anim.c-member(data-member=data)
@@ -29,7 +29,7 @@ mixin member-3(name, data)
       img.c-member__image-3(src='images/' + data +'.jpg' alt=name)
     figcaption.c-member__figcaption
       h3.c-member__nameCSS=name
-
+//- this one
 mixin member-4(name, data)
   li.js-member.c-memberCSS(data-member=data)
     figure.c-member__figure-css
@@ -43,6 +43,13 @@ mixin member-5(name, data)
       img.c-member__image-3(src='images/' + data +'.jpg' alt=name)
     figcaption.c-member__figcaption-bottom
       h3.c-member__name=name
+
+mixin member-7(name, data)
+  li.js-member-anim.c-memberCSS(data-member=data)
+    figure.c-member__figure-7
+      img.c-member__image-7(src='images/' + data +'.jpg' alt=name)
+    figcaption.c-member__figcaption
+      h3.c-member__nameCSS=name
 
 html(lang="sk")
   head

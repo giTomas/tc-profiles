@@ -87,7 +87,7 @@ function profileHandler(e) {
 function profileHandler_2(e) {
   //promise???
   var src = e.currentTarget;
-  var profile = findValueByIndex(profiles, 'id', src.dataset.member);
+  var profile = findValue(profiles, 'id', src.dataset.member);
   var markup = createMarkup(profile);
   addModal2('js-modal', markup, animation_2, src);
 }
